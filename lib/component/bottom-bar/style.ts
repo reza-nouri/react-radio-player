@@ -24,6 +24,9 @@ export const StyledContainer = styled.div`
   width: 100%;
   min-height: 4.5rem;
   height: ${({ theme }) => (theme?.height ? theme.height : "100%")};
+  @media (max-width: 648px) {
+    flex-direction: column;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -64,6 +67,9 @@ export const StyledTextContainer = styled.div`
   align-items: start;
   flex: 1;
   width: 50%;
+  @media (max-width: 648px) {
+    text-align: center;
+  }
 `;
 
 export const StyledPrev = styled(Next)`
@@ -123,9 +129,6 @@ export const StyledVolumeContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
-  @media (max-width: 648px) {
-    display: none;
-  }
   &:hover .rc-slider-handle {
     opacity: 1;
   }
@@ -166,7 +169,4 @@ export const VolumeIconMobileButton = styled.button<{ $isDisabled?: boolean }>`
 
 export const StyledSlider: typeof Slider = styled(Slider)`
   ${styledSliderCss};
-  @media (max-width: 648px) {
-    display: none;
-  }
 `;
